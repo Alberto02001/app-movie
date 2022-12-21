@@ -1,0 +1,8 @@
+@import "/src/assets/styles/variables";
+
+.hero-bg{
+    background-color: $dark-blue;
+    height: -webkit-calc(100vh);
+    height: -moz-calc(100vh);
+    height: calc(100vh);
+}
