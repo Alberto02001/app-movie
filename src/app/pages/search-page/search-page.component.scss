@@ -2,13 +2,34 @@
 
 .search-container{
     background-color: $dark-blue;
-    height: 100vh;
+    height: -webkit-calc(100vh);
+    height: -moz-calc(100vh);
+    height: calc(100vh);
 }
 
 .results-container{
     z-index: 2;
     position: absolute;
+    background-color: $dark-blue;
 }
+
+.close-button{
+    background-color: transparent;
+    border: none;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+    background-image: url("../../../assets/icons/close-icon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px;
+    transition: all 0.5s;
+} 
+
+.close-button:hover{
+    background-size: 40px;
+    transition: all 0.5s;
+} 
 
 .search{
     background-color: transparent;
