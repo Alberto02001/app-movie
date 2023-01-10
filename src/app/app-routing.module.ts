@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ItemPageComponent } from './pages/item-page/item-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 const routes: Routes = [
@@ -9,6 +10,9 @@ const routes: Routes = [
   },
   {
     path: 'search', component: SearchPageComponent
+  },
+  {
+    path: 'item', component: ItemPageComponent
   }
 ];
 

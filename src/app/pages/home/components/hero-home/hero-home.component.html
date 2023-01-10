@@ -8,7 +8,7 @@
                         <img class="w-100" src="http://image.tmdb.org/t/p/w1280{{film.backdrop_path}}"/>
                     </div>
                     <div class="carousel-caption">
-                        <button>{{film.title}}</button>
+                        <button (click)="navigateToItem()">{{film.title}}</button>
                     </div>
                 </ng-template>
             </ngb-carousel>
@@ -23,7 +23,7 @@
                         <img class="w-100" src="http://image.tmdb.org/t/p/w1280{{tv.backdrop_path}}"/>
                     </div>
                     <div class="carousel-caption">
-                        <button>{{tv.name}}</button>
+                        <button (click)="navigateToItem()">{{tv.name}}</button>
                     </div>
                 </ng-template>
             </ngb-carousel>
