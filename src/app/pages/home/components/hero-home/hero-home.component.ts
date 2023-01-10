@@ -25,7 +25,6 @@ export class HeroHomeComponent implements OnInit{
 
     this.http.getTrendingTV().subscribe((data: any) => {
       this.TrendingTv = data.results
-      console.log(data);
     },
     (error) => { console.log(error) });
   }

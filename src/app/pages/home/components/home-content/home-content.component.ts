@@ -23,25 +23,21 @@ export class HomeContentComponent implements OnInit{
   ngOnInit(): void {
     this.http.getTopRatedMovie().subscribe((data: any) => {
       this.topMovie = data.results
-      console.log(data);
     },
     (error) => { console.log(error) });
 
     this.http.getTopRatedTV().subscribe((data: any) => {
       this.topTV = data.results
-      console.log(data);
     },
     (error) => { console.log(error) });
 
     this.http.getPopularMovie().subscribe((data: any) => {
       this.popularMovie = data.results
-      console.log(data);
     },
     (error) => { console.log(error) });
 
     this.http.getPopularTV().subscribe((data: any) => {
       this.popularTV = data.results
-      console.log(data);
     },
     (error) => { console.log(error) });
   }

@@ -18,15 +18,12 @@ export class SearchPageComponent {
     this.searchName = event.target.value
     this.http.getSearch(this.searchName).subscribe((data: any) => {
       this.searchResults = data.results
-      console.log("search",data);
     },
     (error) => { console.log(error) });
   }
 
   closePage(){
     window.history.back()
-    console.log("work");
-    
   }
 
 }
