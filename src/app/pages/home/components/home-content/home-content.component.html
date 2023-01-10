@@ -1,0 +1,56 @@
+<div class="content-bg">
+
+    <p class="slider-title">Top Rated Movie</p>
+    <div class="d-flex justify-content-center align-items-center slider">    
+        <button class="left-button d-none d-sm-block" (click)="scrollLeft()"></button>
+        <div class="d-flex align-items-center scroll-container" id="scroll">
+            <div class="d-flex">
+                <div onclick="location.href='#';" class="d-flex flex-column justify-content-center scroll-item " *ngFor="let film of topMovie">
+                    <img src="http://image.tmdb.org/t/p/w500{{film.poster_path}}"/>
+                </div>
+            </div>
+        </div>
+        <button class="right-button d-none d-sm-block" (click)="scrollRight()"></button>
+    </div>
+
+    <p class="slider-title">Top Rated TV</p>
+    <div class="d-flex justify-content-center align-items-center slider">    
+        <button class="left-button d-none d-sm-block" (click)="scrollLeft1()"></button>
+        <div class="d-flex align-items-center scroll-container" id="scroll1">
+            <div class="d-flex">
+                <div onclick="location.href='#';" class="d-flex flex-column justify-content-center scroll-item " *ngFor="let tv of topTV">
+                    <img src="http://image.tmdb.org/t/p/w500{{tv.poster_path}}"/>
+                </div>
+            </div>
+        </div>
+        <button class="right-button d-none d-sm-block" (click)="scrollRight1()"></button>
+    </div>
+
+    <p class="slider-title">Popular Movie</p>
+    <div class="d-flex justify-content-center align-items-center slider">    
+        <button class="left-button d-none d-sm-block" (click)="scrollLeft2()"></button>
+        <div class="d-flex align-items-center scroll-container" id="scroll2">
+            <div class="d-flex">
+                <div onclick="location.href='#';" class="d-flex flex-column justify-content-center scroll-item " *ngFor="let film of popularMovie">
+                    <img src="http://image.tmdb.org/t/p/w500{{film.poster_path}}"/>
+                </div>
+            </div>
+        </div>
+        <button class="right-button d-none d-sm-block" (click)="scrollRight2()"></button>
+    </div>
+
+    <p class="slider-title">Popular TV</p>
+    <div class="d-flex justify-content-center align-items-center slider">    
+        <button class="left-button d-none d-sm-block" (click)="scrollLeft3()"></button>
+        <div class="d-flex align-items-center scroll-container" id="scroll3">
+            <div class="d-flex">
+                <div onclick="location.href='#';" class="d-flex flex-column justify-content-center scroll-item " *ngFor="let tv of popularTV">
+                    <img src="http://image.tmdb.org/t/p/w500{{tv.poster_path}}"/>
+                </div>
+            </div>
+        </div>
+        <button class="right-button d-none d-sm-block" (click)="scrollRight3()"></button>
+    </div>
+
+</div>
+

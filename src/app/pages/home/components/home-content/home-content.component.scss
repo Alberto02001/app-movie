@@ -1,0 +1,78 @@
+@import "/src/assets/styles/variables";
+@import "bootstrap/scss/bootstrap.scss";
+
+.content-bg{
+    background-color: $blue-2;
+}
+
+.slider-title{
+    font-size: 28px;
+    font-weight: lighter;
+    position: relative;
+    bottom: -20px;
+    margin-left: 30px;
+    color: $blue-4;
+}
+
+.slider{
+    .scroll-container {
+        width: 100%;
+        @include media-breakpoint-up(sm) { width: 95%; }
+        height: 310px;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .scroll-container::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+
+    .scroll-item{
+        width: 180px;
+        padding: 5px;
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    .scroll-item:hover{
+        width: 200px;
+        img{
+           box-shadow: 0px 0px 5px 0px $blue-4; 
+        }
+        
+        transition: all 0.5s;
+    }
+
+    .left-button{
+        background-image: url("../../../../../assets/icons/left-arrow.png");
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-position: center;
+        background-color: transparent;
+        border: none;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+    .left-button:hover{
+        transform: scale(1.3);
+        transition: transform 0.5s;
+    }
+    .right-button{
+        background-image: url("../../../../../assets/icons/right-arrow.png");
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-position: center;
+        background-color: transparent;
+        border: none;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+    .right-button:hover{
+        transform: scale(1.3);
+        transition: transform 0.5s;
+    }
+}

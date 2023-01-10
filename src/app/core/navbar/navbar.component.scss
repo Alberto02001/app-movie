@@ -1,7 +1,8 @@
 @import "/src/assets/styles/variables";
 
 .navbar{
-    position: fixed;
+    position: relative;
+    background-color: $dark-blue;
     width: 100%;
 }
 
@@ -15,25 +16,20 @@
     color: $blue-3;
 }
 
-.search{
+.searchButton{
     background-color: transparent;
-    border: 3px solid $blue-4;
-    color: white;
-    border-radius: 25px;
-    padding: 10px 10px 10px 40px;
+    border: none;
+    padding: 30px;
     background-image: url("../../../assets/icons/search-icon.png");
     background-repeat: no-repeat;
-    background-position: 10px center;
-    background-size: 25px;
+    background-position: center;
+    background-size: 30px;
     font-size: 16px;
+    border-radius: 50px;
+    transition: all 0.3s;
 }
 
-.search:focus{
-    border: 3px solid $blue-3;
-    outline: none;
-    box-shadow: 0px 0px 5px 0px $blue-4;
-}
-
-.search::placeholder{
-    color: $blue-4;
+.searchButton:hover{
+    background-size: 35px;
+    transition: all 0.3s;
 }

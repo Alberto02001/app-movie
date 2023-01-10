@@ -1,0 +1,52 @@
+@import "/src/assets/styles/variables";
+
+.search-container{
+    background-color: $dark-blue;
+    height: 100vh;
+}
+
+.results-container{
+    z-index: 2;
+    position: absolute;
+}
+
+.search{
+    background-color: transparent;
+    border: 3px solid $blue-4;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 10px 10px 40px;
+    background-image: url("../../../assets/icons/search-icon.png");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 25px;
+    font-size: 16px;
+}
+
+.search:focus{
+    border: 3px solid $blue-3;
+    outline: none;
+    box-shadow: 0px 0px 5px 0px $blue-4;
+}
+
+.search::placeholder{
+    color: $blue-4;
+}
+
+
+.search-item{
+    width: 100%;
+    margin: 15px;
+    transition: all 0.5s;
+    cursor: pointer;
+    img{
+        width: 180px;
+     }   
+}
+
+.search-item:hover{
+    img{
+       box-shadow: 0px 0px 5px 0px $blue-4;
+       transition: all 0.5s; 
+    }       
+}
