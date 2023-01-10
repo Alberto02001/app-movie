@@ -1,1 +1,21 @@
-<p>item-page works!</p>
+<div class="bg" style.background-image="url('http://image.tmdb.org/t/p/original{{itemData.backdrop_path}}')">
+    <div class="content d-flex flex-column flex-lg-row">
+        <div *ngIf="itemData.poster_path != null" class="content-box d-flex justify-content-center align-items-center">
+            <img class="poster" src="http://image.tmdb.org/t/p/w500{{itemData.poster_path}}" alt="poster">
+        </div>
+        <div class="content-box d-flex flex-column justify-content-center align-items-center align-items-lg-start">
+            <div class="information-box">
+                <p class="title">{{itemData.title}}{{itemData.name}}</p>
+                <p class="relase">{{itemData.release_date}}{{itemData.first_air_date}}</p>
+                <div class="genre d-flex">
+                    <p class="me-3" *ngFor="let genre of itemData.genres; let i = index">{{i < 3 ? genre.name : ""}}</p>
+                </div>
+                <p class="description">{{itemData.overview}}</p>
+                <div class="duration">
+                    <div *ngIf="itemData.runtime !== undefined" class="d-flex">{{itemData.runtime}} minutes</div>
+                    <div *ngIf="itemData.number_of_episodes !== undefined" class="d-flex">{{itemData.number_of_seasons}} {{itemData.number_of_seasons === 1 ? "season" : "seasons"}}, {{itemData.number_of_episodes}} episodes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

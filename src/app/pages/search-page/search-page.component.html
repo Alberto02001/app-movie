@@ -1,11 +1,11 @@
 <div class="search-container">
   <div class="d-flex justify-content-center align-items-center">
-    <button class="close-button me-4 mt-3" (click)="closePage()"></button>
-    <input (keyup)="onSearch($event)" class="search me-5 mt-3" type="text" placeholder="Cerca...">
+    <input (keyup)="onSearch($event)" class="search mt-5" type="text" placeholder="Cerca...">
+    <button class="close-button ms-4 mt-5" (click)="closePage()"></button>
   </div>
   <div class="results-container container-fluid mt-3" *ngIf="searchName">
     <div class="row">
-      <div class="col search-item" *ngFor="let film of searchResults"><a href="" *ngIf="film.poster_path != null "><img src="http://image.tmdb.org/t/p/w500{{film.poster_path}}"/></a></div>
+      <div class="col search-item" *ngFor="let film of searchResults"><a href="" *ngIf="film.poster_path != null"><img src="http://image.tmdb.org/t/p/w500{{film.poster_path}}"/></a></div>
     </div>
   </div>
 </div>

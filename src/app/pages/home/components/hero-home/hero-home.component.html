@@ -8,7 +8,7 @@
                         <img class="w-100" src="http://image.tmdb.org/t/p/w1280{{film.backdrop_path}}"/>
                     </div>
                     <div class="carousel-caption">
-                        <button (click)="navigateToItem()">{{film.title}}</button>
+                        <button (click)="navigateTo(film.id, film.media_type)">{{film.title}}</button>
                     </div>
                 </ng-template>
             </ngb-carousel>
@@ -18,12 +18,12 @@
         <div class="d-flex flex-column align-items-end content">
             <p>Trending TV</p>
             <ngb-carousel>
-                <ng-template *ngFor="let tv of TrendingTv" ngbSlide>
+                <ng-template *ngFor="let tv of trendingTv" ngbSlide>
                     <div class="picsum-img-wrapper">
                         <img class="w-100" src="http://image.tmdb.org/t/p/w1280{{tv.backdrop_path}}"/>
                     </div>
                     <div class="carousel-caption">
-                        <button (click)="navigateToItem()">{{tv.name}}</button>
+                        <button (click)="navigateTo(tv.id, tv.media_type)">{{tv.name}}</button>
                     </div>
                 </ng-template>
             </ngb-carousel>

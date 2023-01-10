@@ -1,0 +1,58 @@
+@import "/src/assets/styles/variables";
+@import "bootstrap/scss/bootstrap.scss";
+
+.bg{
+    height: 1000px;
+    background-color: $dark-blue;
+    background-position: top center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    .content{
+        background-image: linear-gradient(to bottom, rgba(22,25,37,0.9), rgba(22,25,37,1));
+        .content-box{
+            width: 100%;
+            @include media-breakpoint-up(lg){
+                width: 50%;
+                height: 800px;
+            } 
+        }
+        .poster{
+            width: 250px;
+            margin: 70px;
+            @include media-breakpoint-up(md){
+                width: 350px;
+            } 
+            @include media-breakpoint-up(lg){
+                margin: 0px;
+                width: 400px;
+            } 
+        }
+        .information-box{
+            width: 85%;
+            .title{
+                color: $blue-4;
+                font-size: 30px;
+                font-weight: bolder;
+            }
+            .relase{
+                color: $blue-1;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            .genre{
+                color: $blue-1;
+                font-size: 16px;
+                font-weight: light;
+            }
+            .description{
+                font-size: 18px;
+                color: $blue-3;
+            }
+            .duration{
+                color: $blue-1;
+                font-size: 14px;
+                font-weight: light;
+            }
+        }
+    }
+}
