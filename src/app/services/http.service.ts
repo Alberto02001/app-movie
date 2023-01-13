@@ -47,4 +47,49 @@ export class HttpService {
 		return this.http.get(`https://api.themoviedb.org/3/tv/${id}?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US`);
 	}
 
+	getMovieVideo(id : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US`);
+	}
+
+	getTVvideo(id : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/tv/${id}/videos?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US`);
+	}
+
+	getMovieCredits(id : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US`);
+	}
+
+	getTVcredits(id : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/tv/${id}/credits?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US`);
+	}
+
+	getMovieSimilar(id : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US`);
+	}
+
+	getTVsimilar(id : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/tv/${id}/similar?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US`);
+	}
+
+	getActorDetails(id : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/person/${id}?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US`);
+	}
+
+	getActorMovie(id : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US`);
+	}
+
+	getActorTV(id : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/person/${id}/tv_credits?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US`);
+	}
+
+	getMovieGenres(id : any, page : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=13764af1ec2bb25500856704c5ce745f&with_genres=${id}&page=${page}`);
+	}
+
+	getTVGenres(id : any, page : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/discover/tv?api_key=13764af1ec2bb25500856704c5ce745f&with_genres=${id}&page=${page}`);
+	}
+
+
 }

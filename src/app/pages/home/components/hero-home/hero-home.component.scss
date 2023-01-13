@@ -1,12 +1,21 @@
 @import "/src/assets/styles/variables";
+@import "bootstrap/scss/bootstrap.scss";
 
 .hero-bg{
     background-color: $dark-blue;
-    height: -webkit-calc(92vh);
-    height: -moz-calc(92vh);
-    height: calc(92vh);
     z-index: 1;
-    min-height: 500px;
+    height: -webkit-calc(95vh);
+    height: -moz-calc(95vh);
+    height: calc(95vh);
+    @include media-breakpoint-down(lg){
+        min-height: 1100px;
+    } 
+    @include media-breakpoint-down(md){
+        min-height: 1000px;
+    }  
+    @include media-breakpoint-down(sm){
+        min-height: 700px;
+    }  
 }
 
 .myCarousel{

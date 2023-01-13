@@ -1,21 +1,82 @@
-<div class="bg" style.background-image="url('http://image.tmdb.org/t/p/original{{itemData.backdrop_path}}')">
-    <div class="content d-flex flex-column flex-lg-row">
-        <div *ngIf="itemData.poster_path != null" class="content-box d-flex justify-content-center align-items-center">
-            <img class="poster" src="http://image.tmdb.org/t/p/w500{{itemData.poster_path}}" alt="poster">
-        </div>
-        <div class="content-box d-flex flex-column justify-content-center align-items-center align-items-lg-start">
-            <div class="information-box">
-                <p class="title">{{itemData.title}}{{itemData.name}}</p>
-                <p class="relase">{{itemData.release_date}}{{itemData.first_air_date}}</p>
-                <div class="genre d-flex">
-                    <p class="me-3" *ngFor="let genre of itemData.genres; let i = index">{{i < 3 ? genre.name : ""}}</p>
-                </div>
-                <p class="description">{{itemData.overview}}</p>
-                <div class="duration">
-                    <div *ngIf="itemData.runtime !== undefined" class="d-flex">{{itemData.runtime}} minutes</div>
-                    <div *ngIf="itemData.number_of_episodes !== undefined" class="d-flex">{{itemData.number_of_seasons}} {{itemData.number_of_seasons === 1 ? "season" : "seasons"}}, {{itemData.number_of_episodes}} episodes</div>
+<div #demoYouTubePlayer class="bg demo-youtube-player" style.background-image="url('http://image.tmdb.org/t/p/original{{itemData.backdrop_path}}')">
+    <div class="content">
+        <button class="close-button mt-3 ms-3" routerLink='/home'></button>
+        <div class="d-flex flex-column flex-lg-row">
+            <div *ngIf="itemData.poster_path != null" class="content-box d-flex justify-content-center align-items-center">
+                <img class="poster" src="http://image.tmdb.org/t/p/w500{{itemData.poster_path}}" alt="poster">
+            </div>
+            <div class="content-box d-flex flex-column justify-content-center align-items-center align-items-lg-start">
+                <div class="information-box">
+                    <p class="title">{{itemData.title}}{{itemData.name}}</p>
+                    <p class="relase">{{itemData.release_date}}{{itemData.first_air_date}}</p>
+                    <div class="genre d-flex">
+                        <p class="me-3" *ngFor="let genre of itemData.genres; let i = index">{{i < 3 ? genre.name : ""}}</p>
+                    </div>
+                    <p class="description">{{itemData.overview}}</p>
+                    <div class="duration">
+                        <div *ngIf="itemData.runtime !== undefined" class="d-flex">{{itemData.runtime}} minutes</div>
+                        <div *ngIf="itemData.number_of_episodes !== undefined" class="d-flex">{{itemData.number_of_seasons}} {{itemData.number_of_seasons === 1 ? "season" : "seasons"}}, {{itemData.number_of_episodes}} episodes</div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="bg-content">
+        <div *ngIf="credits.length > 0" class="d-flex justify-content-center align-items-center sub-title pt-5"><p>Cast</p></div>  
+        <div *ngIf="credits.length > 0" class="d-flex justify-content-center align-items-center sliderCast">
+            <button *ngIf="credits.length > 6" class="left-button d-none d-sm-block" (click)="scrollLeftCast()"></button>
+            <div class="d-flex align-items-center scroll-container" id="scrollCast">
+                <div class="d-flex">
+                    <div class="d-flex flex-column justify-content-center" *ngFor="let actor of credits">
+                        <div (click)="actor.profile_path !== null?goToActor(actor.id):''" class="card scroll-item d-flex justify-content-center align-items-center">
+                            <img *ngIf="actor.profile_path !== null" src="https://www.themoviedb.org/t/p/w300{{actor.profile_path}}" class="card-img-top" alt="actor image">
+                            <div *ngIf="actor.profile_path === null" style="height: 100px;"></div>
+                            <div class="card-body">
+                            <p class="actor-name">{{actor.name}}</p>
+                            <p class="character-name">{{actor.character}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button *ngIf="credits.length > 6" class="right-button d-none d-sm-block" (click)="scrollRightCast()"></button>
+        </div>
+
+        <div *ngIf="videos.length > 0" class="d-flex flex-column align-items-center justify-content-center trailer-box">
+            <p class="mt-3">Trailers and videos</p>
+            <div *ngIf="videos.length === 1" class="d-flex align-items-center justify-content-center mt-3">
+                <youtube-player
+                    [videoId]="videos[0]"
+                    [width]="videoWidth"
+                    [height]="videoHeight"
+                ></youtube-player>
+            </div>
+            <ngb-carousel *ngIf="videos.length > 1" class="mt-3 w-100 pb-5">
+                <ng-template *ngFor="let key of videos" ngbSlide>
+                    <div class="d-flex align-items-center justify-content-center picsum-img-wrapper">
+                        <youtube-player
+                            [videoId]="key"
+                            [width]="videoWidth"
+                            [height]="videoHeight"
+                        ></youtube-player>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center sub-title pt-5"><p>Similar shows</p></div>  
+        <div class="d-flex justify-content-center align-items-center slider pb-5">    
+            <button class="left-button d-none d-sm-block" (click)="scrollLeft()"></button>
+            <div class="d-flex align-items-center scroll-container" id="scroll">
+                <div class="d-flex">
+                    <div class="d-flex flex-column justify-content-center" *ngFor="let film of similar">
+                        <div class="scroll-item" (click)="goToSimilar(film.id)">
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w500{{film.poster_path}}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="right-button d-none d-sm-block" (click)="scrollRight()"></button>
         </div>
     </div>
 </div>

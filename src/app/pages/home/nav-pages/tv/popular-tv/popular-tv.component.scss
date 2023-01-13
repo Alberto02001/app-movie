@@ -1,0 +1,27 @@
+@import "/src/assets/styles/variables";
+@import "bootstrap/scss/bootstrap.scss";
+
+.bg{
+    background-color: $dark-blue;
+}
+
+.search-item{
+    width: 180px;
+    margin: 15px;
+    transition: all 0.5s;
+    cursor: pointer;
+    @include media-breakpoint-down(sm){
+        width: 140px;
+    }  
+}
+
+.search-item:hover{
+    box-shadow: 0px 0px 5px 0px $blue-4;
+    transition: all 0.5s;      
+}
+
+.title{
+    font-size: 28px;
+    font-weight: lighter;
+    color: $blue-4;
+}

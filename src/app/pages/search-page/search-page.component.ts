@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
+import { GetIDService } from '../item-page/services/get-id.service';
 
 @Component({
   selector: 'app-search-page',
@@ -12,7 +13,10 @@ export class SearchPageComponent {
 
   searchResults : any[] = []
 
-  constructor(private http : HttpService) {}
+  constructor(
+    private http : HttpService,
+    private getId: GetIDService
+    ) {}
 
   onSearch(event: any) {
     this.searchName = event.target.value
@@ -22,8 +26,8 @@ export class SearchPageComponent {
     (error) => { console.log(error) });
   }
 
-  closePage(){
-    window.history.back()
-  }
+  navigateTo(id : string , tv : any){
+    this.getId.navigateToItem(id, tv)
+  }  
 
 }

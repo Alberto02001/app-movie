@@ -1,15 +1,14 @@
 @import "/src/assets/styles/variables";
+@import "bootstrap/scss/bootstrap.scss";
 
-.search-container{
+.bg{
     background-color: $dark-blue;
-    height: -webkit-calc(100vh);
-    height: -moz-calc(100vh);
-    height: calc(100vh);
+    height: -webkit-calc(95vh);
+    height: -moz-calc(95vh);
+    height: calc(95vh);
 }
 
-.results-container{
-    z-index: 2;
-    position: absolute;
+.search-container{
     background-color: $dark-blue;
 }
 
@@ -56,18 +55,16 @@
 
 
 .search-item{
-    width: 100%;
+    width: 180px;
     margin: 15px;
     transition: all 0.5s;
     cursor: pointer;
-    img{
-        width: 180px;
-     }   
+    @include media-breakpoint-down(sm){
+        width: 140px;
+    }  
 }
 
 .search-item:hover{
-    img{
-       box-shadow: 0px 0px 5px 0px $blue-4;
-       transition: all 0.5s; 
-    }       
+    box-shadow: 0px 0px 5px 0px $blue-4;
+    transition: all 0.5s;      
 }

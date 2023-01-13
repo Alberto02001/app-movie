@@ -8,26 +8,23 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
             <a class="nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Film
+              Movie
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Popolare</a></li>
-              <li><a class="dropdown-item" href="#">In Arrivo</a></li>
-              <li><a class="dropdown-item" href="#">Più Votati</a></li>
+              <li><a class="dropdown-item" routerLink='/home/popular-movie'>Popular</a></li>
+              <li><a class="dropdown-item" routerLink='/home/top-rated-movie'>Top Rated</a></li>
+              <li><a class="dropdown-item" (click)="navigateToItem('28')">Action</a></li>
+              <li><a class="dropdown-item" (click)="navigateToItem('10749')">love</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Serie TV
+              TV
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Popolare</a></li>
-              <li><a class="dropdown-item" href="#">In Arrivo</a></li>
-              <li><a class="dropdown-item" href="#">Più Votati</a></li>
+              <li><a class="dropdown-item" routerLink='/home/popular-tv'>Popular</a></li>
+              <li><a class="dropdown-item" routerLink='/home/top-rated-tv'>Top Rated</a></li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
           </li>
         </ul>
         <button class="searchButton" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLink="/search"></button>

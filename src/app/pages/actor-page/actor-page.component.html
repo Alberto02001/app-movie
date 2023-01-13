@@ -1,0 +1,45 @@
+<div class="bg">
+    <button class="close-button mt-3 ms-3" routerLink='/home'></button>
+    <div class="d-flex flex-column flex-lg-row">
+        <div class="poster-box d-flex justify-content-center align-items-center">
+            <img class="poster" src="http://image.tmdb.org/t/p/w500{{actorData.profile_path}}" alt="poster">
+        </div>
+        <div class="content-box d-flex flex-column justify-content-center align-items-center align-items-lg-start">
+            <div class="information-box mt-3">
+                <p class="name">{{actorData.name}}</p>
+                <p class="place">{{actorData.place_of_birth}}</p>
+                <p class="birth">{{actorData.birthday}}</p>
+                <p class="description">{{actorData.biography}}</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="movie.length > 0" class="d-flex justify-content-center align-items-center sub-title pt-5"><p>Movies with this actor</p></div>  
+    <div *ngIf="movie.length > 0" class="d-flex justify-content-center align-items-center slider">    
+        <button *ngIf="movie.length > 6" class="left-button d-none d-sm-block" (click)="scrollLeft()"></button>
+        <div class="d-flex align-items-center scroll-container" id="scroll">
+            <div class="d-flex">
+                <div class="d-flex flex-column justify-content-center " *ngFor="let film of movie">
+                    <div class="scroll-item" (click)="navigateTo(film.id, film.first_air_date)" *ngIf="film.poster_path != null">
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w500{{film.poster_path}}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button *ngIf="movie.length > 6" class="right-button d-none d-sm-block" (click)="scrollRight()"></button>
+    </div>
+    <div *ngIf="tv.length > 0" class="d-flex justify-content-center align-items-center sub-title pt-5"><p>TV with this actor</p></div>  
+    <div *ngIf="tv.length > 0" class="d-flex justify-content-center align-items-center slider">    
+        <button *ngIf="tv.length > 6" class="left-button d-none d-sm-block" (click)="scrollLeft1()"></button>
+        <div class="d-flex align-items-center scroll-container" id="scroll1">
+            <div class="d-flex">
+                <div class="d-flex flex-column justify-content-center" *ngFor="let tv of tv">
+                    <div class="scroll-item" (click)="navigateTo(tv.id, tv.first_air_date)" *ngIf="tv.poster_path != null">
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w500{{tv.poster_path}}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button *ngIf="tv.length > 6" class="right-button d-none d-sm-block" (click)="scrollRight1()"></button>
+    </div>
+</div>
+

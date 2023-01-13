@@ -5,8 +5,10 @@
         <button class="left-button d-none d-sm-block" (click)="scrollLeft()"></button>
         <div class="d-flex align-items-center scroll-container" id="scroll">
             <div class="d-flex">
-                <div onclick="location.href='#';" class="d-flex flex-column justify-content-center scroll-item " *ngFor="let film of topMovie">
-                    <img src="http://image.tmdb.org/t/p/w500{{film.poster_path}}"/>
+                <div class="d-flex flex-column justify-content-center" *ngFor="let film of topMovie">
+                    <div class="scroll-item" (click)="navigateTo(film.id, film.first_air_date)">
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w500{{film.poster_path}}"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -18,8 +20,10 @@
         <button class="left-button d-none d-sm-block" (click)="scrollLeft1()"></button>
         <div class="d-flex align-items-center scroll-container" id="scroll1">
             <div class="d-flex">
-                <div onclick="location.href='#';" class="d-flex flex-column justify-content-center scroll-item " *ngFor="let tv of topTV">
-                    <img src="http://image.tmdb.org/t/p/w500{{tv.poster_path}}"/>
+                <div class="d-flex flex-column justify-content-center" *ngFor="let tv of topTV">
+                    <div class="scroll-item" (click)="navigateTo(tv.id, tv.first_air_date)">
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w500{{tv.poster_path}}"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -31,8 +35,10 @@
         <button class="left-button d-none d-sm-block" (click)="scrollLeft2()"></button>
         <div class="d-flex align-items-center scroll-container" id="scroll2">
             <div class="d-flex">
-                <div onclick="location.href='#';" class="d-flex flex-column justify-content-center scroll-item " *ngFor="let film of popularMovie">
-                    <img src="http://image.tmdb.org/t/p/w500{{film.poster_path}}"/>
+                <div class="d-flex flex-column justify-content-center" *ngFor="let film of popularMovie">
+                    <div class="scroll-item" (click)="navigateTo(film.id, film.first_air_date)">
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w500{{film.poster_path}}"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -44,13 +50,14 @@
         <button class="left-button d-none d-sm-block" (click)="scrollLeft3()"></button>
         <div class="d-flex align-items-center scroll-container" id="scroll3">
             <div class="d-flex">
-                <div onclick="location.href='#';" class="d-flex flex-column justify-content-center scroll-item " *ngFor="let tv of popularTV">
-                    <img src="http://image.tmdb.org/t/p/w500{{tv.poster_path}}"/>
+                <div class="d-flex flex-column justify-content-center" *ngFor="let tv of popularTV">
+                    <div class="scroll-item" (click)="navigateTo(tv.id, tv.first_air_date)">
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w500{{tv.poster_path}}"/>
+                    </div>
                 </div>
             </div>
         </div>
         <button class="right-button d-none d-sm-block" (click)="scrollRight3()"></button>
     </div>
-
 </div>
 

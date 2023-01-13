@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetIDService } from 'src/app/pages/item-page/services/get-id.service';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -18,7 +19,10 @@ export class HomeContentComponent implements OnInit{
 
   scrollvalue : number = 900
 
-  constructor(private http : HttpService) {}
+  constructor(
+    private http : HttpService,
+    private getId: GetIDService 
+    ) {}
 
   ngOnInit(): void {
     this.http.getTopRatedMovie().subscribe((data: any) => {
@@ -40,6 +44,7 @@ export class HomeContentComponent implements OnInit{
       this.popularTV = data.results
     },
     (error) => { console.log(error) });
+
   }
 
   scrollLeft() : void {
@@ -75,5 +80,8 @@ export class HomeContentComponent implements OnInit{
     document.getElementById("scroll3")!.scrollLeft += this.scrollvalue;
   };
 
+  navigateTo(id : string , tv : any){
+    this.getId.navigateToItem(id, tv)
+  }  
 
 }

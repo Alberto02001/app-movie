@@ -1,0 +1,135 @@
+@import "/src/assets/styles/variables";
+@import "bootstrap/scss/bootstrap.scss";
+
+.bg{
+    background-color: $dark-blue;
+    .close-button{
+        background-color: transparent;
+        border: none;
+        width: 45px;
+        height: 45px;
+        padding: 5px;
+        background-image: url("../../../assets/icons/close-icon.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 35px;
+        transition: all 0.5s;
+    } 
+    .close-button:hover{
+        background-size: 40px;
+        transition: all 0.5s;
+    } 
+    .poster-box{
+        width: 100%;
+        @include media-breakpoint-up(lg){
+            width: 50%;
+            height: 800px;
+        } 
+    }
+    .content-box{
+        width: 100%;
+        @include media-breakpoint-up(lg){
+            width: 50%;
+        } 
+    }
+    .poster{
+        width: 250px;
+        margin: 70px;
+        @include media-breakpoint-up(md){
+            width: 350px;
+        } 
+        @include media-breakpoint-up(lg){
+            margin: 0px;
+            width: 400px;
+        } 
+    }
+    .information-box{
+        width: 85%;
+        .name{
+            color: $blue-4;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+        .place{
+            color: $blue-1;
+            font-size: 14px;
+            font-weight: light;
+        }
+        .birth{
+            color: $blue-1;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .description{
+            font-size: 18px;
+            color: $blue-3;
+        }
+    }
+}
+.sub-title{
+    font-size: 30px;
+    font-weight: light;
+    color: $blue-4;
+}
+.slider{
+    .scroll-container {
+        width: 100%;
+        @include media-breakpoint-up(sm) { width: 95%; }
+        height: 310px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .scroll-container::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+
+    .scroll-item{
+        width: 180px;
+        padding: 5px;
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    .scroll-item:hover{
+        width: 200px;
+        img{
+           box-shadow: 0px 0px 5px 0px $blue-4; 
+        }
+        transition: all 0.5s;
+    }
+
+    .left-button{
+        background-image: url("../../../assets/icons/left-arrow.png");
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-position: center;
+        background-color: transparent;
+        border: none;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+    .left-button:hover{
+        transform: scale(1.3);
+        transition: transform 0.5s;
+    }
+    .right-button{
+        background-image: url("../../../assets/icons/right-arrow.png");
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-position: center;
+        background-color: transparent;
+        border: none;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+    .right-button:hover{
+        transform: scale(1.3);
+        transition: transform 0.5s;
+    }
+}

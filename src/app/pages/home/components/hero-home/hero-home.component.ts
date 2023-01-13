@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { GetIDService } from 'src/app/pages/item-page/services/get-id.service';
 import { HttpService } from 'src/app/services/http.service';
-import { GetIDService } from 'src/app/pages/item-page/get-id.service';
 
 @Component({
   selector: 'app-hero-home',

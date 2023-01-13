@@ -1,0 +1,11 @@
+<div class="bg container-fluid">
+    <div class="d-flex justify-content-center align-items-center">
+        <p class="title pt-3">Top Rated TV</p>
+    </div>
+    <div class="grid">
+        <ng-container *ngFor="let tv of tv">
+            <img class="search-item" *ngIf="tv.poster_path != null" (click)="navigateTo(tv.id, tv.first_air_date)" src="http://image.tmdb.org/t/p/w500{{tv.poster_path}}"/>
+        </ng-container>
+    </div>
+</div>
+
