@@ -5,12 +5,42 @@
     background-color: $dark-blue;
     width: 100%;
 }
-
+.navIcon{
+    --bs-navbar-toggler-icon-bg: url("../../../assets/icons/burger.png");
+}
+.navCloseIcon{
+    --bs-navbar-toggler-icon-bg: url("../../../assets/icons/close-icon.png");
+}
+.navbar-brand{
+    width: 160px;        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 95%;
+        transition: all 0.5s;  
+    } 
+}
+.navbar-brand:hover{
+    img{
+        width: 100%;
+        transition: all 0.5s;  
+    } 
+}
+.dropdown-item{
+    cursor: pointer;
+}
+.dropdown-item:hover{
+    background-color: $blue-4;
+}
+.dropdown-menu{
+    background-color: $blue-3;
+}
 .nav-link{
     color: $blue-4;
     padding: 15px !important;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: lighter;
+    font-size: 18px;
 }
 .nav-link:hover{
     color: $blue-3;

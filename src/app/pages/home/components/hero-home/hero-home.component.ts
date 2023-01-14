@@ -10,6 +10,8 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class HeroHomeComponent implements OnInit{
 
+  isLoad : boolean = false 
+
   nowMovie : any[] = []
 
   trendingTv : any[] = []
@@ -32,6 +34,8 @@ export class HeroHomeComponent implements OnInit{
       this.trendingTv = data.results
     },
     (error) => { console.log(error) });
+
+    this.isLoad = true
   }
 
   navigateTo(id : string , tv : any){

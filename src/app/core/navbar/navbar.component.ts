@@ -8,13 +8,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NavbarComponent{
 
+  expanded : boolean = true
+
   constructor(
     private route: ActivatedRoute,
     private router: Router 
   ) {}
 
-  navigateToItem(id : string){
+  navigateToGenreMovie(id : string){
     this.router.navigate(['/home/genres-movie'], {
+      relativeTo: this.route,
+      queryParams: {
+        id: id
+      },
+      queryParamsHandling: 'merge',
+      skipLocationChange: true
+    });
+  }
+
+  navigateToGenreTV(id : string){
+    this.router.navigate(['/home/genres-tv'], {
       relativeTo: this.route,
       queryParams: {
         id: id

@@ -1,2 +1,6 @@
 @import "/src/assets/styles/variables";
 @import "bootstrap/scss/bootstrap.scss";
+
+body{
+    background-color: $dark-blue;
+}

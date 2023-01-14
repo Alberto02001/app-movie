@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg navIcon">
     <div class="container">
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#"><img src="../../../assets/icons/logo.png" alt="logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -8,13 +8,26 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
             <a class="nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Movie
+              MOVIE
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" routerLink='/home/popular-movie'>Popular</a></li>
-              <li><a class="dropdown-item" routerLink='/home/top-rated-movie'>Top Rated</a></li>
-              <li><a class="dropdown-item" (click)="navigateToItem('28')">Action</a></li>
-              <li><a class="dropdown-item" (click)="navigateToItem('10749')">love</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLink='/home/popular-movie'>Popular</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLink='/home/top-rated-movie'>Top Rated</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('28')">Action</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('12')">Adventure</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('16')">Animation</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('35')">Comedy</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('80')">Crime</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('99')">Documentary</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('18')">Drama</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('10751')">Family</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('14')">Fantasy</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('27')">Horror</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('10402')">Music</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('10749')">Romance</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('53')">Thriller</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('10752')">War</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreMovie('37')">Western</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -22,8 +35,23 @@
               TV
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" routerLink='/home/popular-tv'>Popular</a></li>
-              <li><a class="dropdown-item" routerLink='/home/top-rated-tv'>Top Rated</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLink='/home/popular-tv'>Popular</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLink='/home/top-rated-tv'>Top Rated</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('10759')">Action & Adventure</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('10762')">Kids</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('16')">Animation</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('35')">Comedy</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('80')">Crime</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('99')">Documentary</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('18')">Drama</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('10751')">Family</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('10765')">Sci-Fi & Fantasy</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('10764')">Reality</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('10766')">Soap</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('10749')">Romance</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('9648')">Mystery</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('10768')">War & Politics</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="navigateToGenreTV('37')">Western</a></li>
             </ul>
           </li>
         </ul>

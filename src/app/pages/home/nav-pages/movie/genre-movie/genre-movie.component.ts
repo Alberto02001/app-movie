@@ -18,6 +18,8 @@ export class GenreMovieComponent implements OnInit{
 
   movies : any = []
 
+  currentPage : number = 1
+
   constructor(
     private route: ActivatedRoute,
     private http : HttpService,
@@ -30,7 +32,10 @@ export class GenreMovieComponent implements OnInit{
         this.data = {...params};
         this.id = this.data.params.id
       });
-      this.http.getMovieGenres(this.id, 1).subscribe((data: any) => {
+
+      this.currentPage = 1
+
+      this.http.getMovieGenres(this.id, this.currentPage).subscribe((data: any) => {
         this.movies = data.results
       },
       (error) => { console.log(error) });
@@ -44,10 +49,14 @@ export class GenreMovieComponent implements OnInit{
       this.data = {...params};
       this.id = this.data.params.id
     });
-    this.http.getMovieGenres(this.id, 1).subscribe((data: any) => {
+
+    this.currentPage = 1
+
+    this.http.getMovieGenres(this.id, this.currentPage).subscribe((data: any) => {
       this.movies = data.results
     },
     (error) => { console.log(error) });
+
     this.setName()
   }
 
@@ -55,11 +64,66 @@ export class GenreMovieComponent implements OnInit{
     this.getId.navigateToItem(id, tv)
   }
 
+  
+  nextPage(){
+    if(this.currentPage !== 50){
+      this.currentPage++ 
+      this.http.getMovieGenres(this.id, this.currentPage).subscribe((data: any) => {
+        this.movies = data.results
+      },
+      (error) => { console.log(error) });
+      window.scroll({ 
+        top: 0, 
+        left: 0, 
+      });
+    }
+  }
+
+  prevPage(){
+    if(this.currentPage !== 1){
+      this.currentPage-- 
+      this.http.getMovieGenres(this.id, this.currentPage).subscribe((data: any) => {
+        this.movies = data.results
+      },
+      (error) => { console.log(error) });
+      window.scroll({ 
+        top: 0, 
+        left: 0, 
+      });
+    }
+  }
+
   setName(){
     if(this.id === "28")
     this.genreName = "Action"
+    if(this.id === "12")
+    this.genreName = "Adventure"
+    if(this.id === "16")
+    this.genreName = "Animation"
+    if(this.id === "35")
+    this.genreName = "Comedy"
+    if(this.id === "80")
+    this.genreName = "Crime"
+    if(this.id === "99")
+    this.genreName = "Documentary"
+    if(this.id === "18")
+    this.genreName = "Drama"
+    if(this.id === "10751")
+    this.genreName = "Family"
+    if(this.id === "14")
+    this.genreName = "Fantasy"
+    if(this.id === "27")
+    this.genreName = "Horror"
+    if(this.id === "10402")
+    this.genreName = "Music"
     if(this.id === "10749")
-    this.genreName = "Love"
+    this.genreName = "Romance"
+    if(this.id === "53")
+    this.genreName = "Thriller"
+    if(this.id === "10752")
+    this.genreName = "War"
+    if(this.id === "37")
+    this.genreName = "Western"
   }
 
 }
