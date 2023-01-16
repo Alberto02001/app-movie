@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { GetIDService } from 'src/app/pages/item-page/services/get-id.service';
 import { HttpService } from 'src/app/services/http.service';
+import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 
 @Component({
   selector: 'app-hero-home',
@@ -10,16 +11,15 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class HeroHomeComponent implements OnInit{
 
-  isLoad : boolean = false 
+  nowMovie : any = []
 
-  nowMovie : any[] = []
-
-  trendingTv : any[] = []
+  trendingTv : any = []
 
   constructor(
       private http : HttpService, 
       config: NgbCarouselConfig,
-      private getId: GetIDService 
+      private getId: GetIDService,
+      public spinnerService : SpinnerService
     ){
     config.showNavigationIndicators = false;
     }
@@ -34,8 +34,6 @@ export class HeroHomeComponent implements OnInit{
       this.trendingTv = data.results
     },
     (error) => { console.log(error) });
-
-    this.isLoad = true
   }
 
   navigateTo(id : string , tv : any){

@@ -1,3 +1,4 @@
+<app-spinner *ngIf="spinnerService.visibility | async"></app-spinner>
 <div class="bg container-fluid">
     <div class="d-flex justify-content-center align-items-center">
         <p class="title pt-3">Top Rated Movies</p>
@@ -8,3 +9,5 @@
         </ng-container>
     </div>
 </div>
+<div class="d-flex justify-content-center align-items-center select-page"><button *ngIf="currentPage !== 1" class="prev" (click)="prevPage()"></button><p>{{currentPage}}</p><button *ngIf="currentPage !== 50" class="next" (click)="nextPage()"></button></div>
+

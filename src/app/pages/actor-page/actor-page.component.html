@@ -1,4 +1,5 @@
-<div class="bg">
+<app-spinner *ngIf="spinnerService.visibility | async"></app-spinner>
+<div *ngIf="!(spinnerService.visibility | async)" class="bg">
     <button class="close-button mt-3 ms-3" routerLink='/home'></button>
     <div class="d-flex flex-column flex-lg-row">
         <div class="poster-box d-flex justify-content-center align-items-center">

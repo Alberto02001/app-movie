@@ -12,7 +12,7 @@ import { GenreMovieComponent } from './nav-pages/movie/genre-movie/genre-movie.c
 import { TopRatedTvComponent } from './nav-pages/tv/top-rated-tv/top-rated-tv.component';
 import { PopularTvComponent } from './nav-pages/tv/popular-tv/popular-tv.component';
 import { GenreTvComponent } from './nav-pages/tv/genre-tv/genre-tv.component';
-
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { GenreTvComponent } from './nav-pages/tv/genre-tv/genre-tv.component';
     TopRatedTvComponent,
     PopularTvComponent,
     GenreTvComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,

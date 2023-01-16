@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
+import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 import { GetIDService } from '../item-page/services/get-id.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class SearchPageComponent {
 
   constructor(
     private http : HttpService,
-    private getId: GetIDService
+    private getId: GetIDService,
+    public spinnerService : SpinnerService
     ) {}
 
   onSearch(event: any) {

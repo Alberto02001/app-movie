@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnI
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { HttpService } from 'src/app/services/http.service';
+import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 
 @Component({
   selector: 'app-item-page',
@@ -35,7 +36,8 @@ export class ItemPageComponent implements OnInit, AfterViewInit, OnDestroy{
     private http : HttpService,
     private router: Router,
     config: NgbCarouselConfig,
-    private _changeDetectorRef: ChangeDetectorRef
+    private _changeDetectorRef: ChangeDetectorRef,
+    public spinnerService : SpinnerService
   ){
     config.showNavigationIndicators = true;
   }

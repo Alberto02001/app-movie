@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
+import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 import { GetIDService } from '../item-page/services/get-id.service';
 
 @Component({
@@ -25,7 +26,8 @@ export class ActorPageComponent implements OnInit{
   constructor(
     private route: ActivatedRoute,
     private http : HttpService,
-    private getId : GetIDService
+    private getId : GetIDService,
+    public spinnerService : SpinnerService
   ){}
 
   ngOnInit(): void {

@@ -5,11 +5,16 @@
     background-color: $dark-blue;
     width: 100%;
 }
-.navIcon{
-    --bs-navbar-toggler-icon-bg: url("../../../assets/icons/burger.png");
-}
-.navCloseIcon{
-    --bs-navbar-toggler-icon-bg: url("../../../assets/icons/close-icon.png");
+.navbar-toggler {
+    border: none;
+    outline: none;
+--bs-navbar-toggler-icon-bg: url("../../../assets/icons/burger.png");
+     &:focus,
+     &:active,
+     &-icon:focus {
+       outline: none;
+       box-shadow: none;
+     }
 }
 .navbar-brand{
     width: 160px;        
@@ -29,6 +34,7 @@
 }
 .dropdown-item{
     cursor: pointer;
+    color: $dark-blue;
 }
 .dropdown-item:hover{
     background-color: $blue-4;

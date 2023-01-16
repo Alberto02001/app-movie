@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetIDService } from 'src/app/pages/item-page/services/get-id.service';
 import { HttpService } from 'src/app/services/http.service';
+import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 
 @Component({
   selector: 'app-home-content',
@@ -21,26 +22,27 @@ export class HomeContentComponent implements OnInit{
 
   constructor(
     private http : HttpService,
-    private getId: GetIDService 
+    private getId: GetIDService,
+    public spinnerService : SpinnerService
     ) {}
 
   ngOnInit(): void {
-    this.http.getTopRatedMovie().subscribe((data: any) => {
+    this.http.getTopRatedMovie(1).subscribe((data: any) => {
       this.topMovie = data.results
     },
     (error) => { console.log(error) });
 
-    this.http.getTopRatedTV().subscribe((data: any) => {
+    this.http.getTopRatedTV(1).subscribe((data: any) => {
       this.topTV = data.results
     },
     (error) => { console.log(error) });
 
-    this.http.getPopularMovie().subscribe((data: any) => {
+    this.http.getPopularMovie(1).subscribe((data: any) => {
       this.popularMovie = data.results
     },
     (error) => { console.log(error) });
 
-    this.http.getPopularTV().subscribe((data: any) => {
+    this.http.getPopularTV(1).subscribe((data: any) => {
       this.popularTV = data.results
     },
     (error) => { console.log(error) });

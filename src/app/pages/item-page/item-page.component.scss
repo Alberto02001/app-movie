@@ -131,14 +131,14 @@
             text-align: center;
         }
     }
-
-    .scroll-item:hover{
-        img{
-            box-shadow: 0px 0px 5px 0px $blue-4;
-            width: 90%;
-            transition: all 0.5s; 
-         }
-         
+    @include media-breakpoint-up(sm) {
+        .scroll-item:hover{
+            img{
+                box-shadow: 0px 0px 5px 0px $blue-4;
+                width: 90%;
+                transition: all 0.5s; 
+            }
+        }
     }
 
     .left-button{

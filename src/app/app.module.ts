@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {YouTubePlayerModule} from '@angular/youtube-player';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { ItemPageComponent } from './pages/item-page/item-page.component';
 import { ActorPageComponent } from './pages/actor-page/actor-page.component';
+import { CustomHttpInterceptor } from './services/spinner/http-interceptor';
+import { SpinnerComponent } from './core/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ActorPageComponent } from './pages/actor-page/actor-page.component';
     FooterComponent,
     SearchPageComponent,
     ItemPageComponent,
-    ActorPageComponent
+    ActorPageComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,11 @@ import { ActorPageComponent } from './pages/actor-page/actor-page.component';
     HttpClientModule,
     YouTubePlayerModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: CustomHttpInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

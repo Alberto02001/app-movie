@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GetIDService } from 'src/app/pages/item-page/services/get-id.service';
 import { HttpService } from 'src/app/services/http.service';
+import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 
 @Component({
   selector: 'app-genre-tv',
@@ -24,7 +25,8 @@ export class GenreTvComponent implements OnInit{
     private route: ActivatedRoute,
     private http : HttpService,
     private getId: GetIDService,
-    private router: Router
+    private router: Router,
+    public spinnerService : SpinnerService
   ){
     router.events.forEach((event) => {
       this.route.queryParamMap

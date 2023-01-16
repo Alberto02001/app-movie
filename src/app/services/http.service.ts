@@ -23,20 +23,20 @@ export class HttpService {
 		return this.http.get("https://api.themoviedb.org/3/trending/tv/day?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US");
 	}
 
-	getTopRatedMovie(): Observable<any> {
-		return this.http.get("https://api.themoviedb.org/3/movie/top_rated?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US");
+	getTopRatedMovie(page : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US&page=${page}`);
 	}
 
-	getTopRatedTV(): Observable<any> {
-		return this.http.get("https://api.themoviedb.org/3/tv/top_rated?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US");
+	getTopRatedTV(page : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/tv/top_rated?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US&page=${page}`);
 	}
 
-	getPopularMovie(): Observable<any> {
-		return this.http.get("https://api.themoviedb.org/3/movie/popular?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US");
+	getPopularMovie(page : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/movie/popular?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US&page=${page}`);
 	}
 
-	getPopularTV(): Observable<any> {
-		return this.http.get("https://api.themoviedb.org/3/tv/popular?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US");
+	getPopularTV(page : any): Observable<any> {
+		return this.http.get(`https://api.themoviedb.org/3/tv/popular?api_key=13764af1ec2bb25500856704c5ce745f&language=en-US&page=${page}`);
 	}
 
 	getMovie(id : any): Observable<any> {
