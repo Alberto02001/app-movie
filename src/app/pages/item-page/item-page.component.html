@@ -1,5 +1,5 @@
 <app-spinner *ngIf="spinnerService.visibility | async"></app-spinner>
-<div #demoYouTubePlayer class="bg demo-youtube-player" style.background-image="url('http://image.tmdb.org/t/p/original{{itemData.backdrop_path}}')" >
+<div #demoYouTubePlayer class="bg demo-youtube-player" style.background-image="url('http://image.tmdb.org/t/p/w780{{itemData.backdrop_path}}')" >
     <div *ngIf="!(spinnerService.visibility | async)">
         <div class="content">
             <button class="close-button mt-3 ms-3" routerLink='/home'></button>
