@@ -1,6 +1,7 @@
 .spinner{
-    padding: 100px;
-    height: 300px;
+    height: -webkit-calc(90vh);
+    height: -moz-calc(90vh);
+    height: calc(90vh);
     .spinner-border{
         width: 80px;
         height: 80px;
