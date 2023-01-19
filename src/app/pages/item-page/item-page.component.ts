@@ -130,12 +130,9 @@ export class ItemPageComponent implements OnInit, AfterViewInit, OnDestroy{
 
   goToActor(id : string){
     this.router.navigate(['/actor'], {
-      relativeTo: this.route,
       queryParams: {
         id: id
-      },
-      queryParamsHandling: 'merge',
-      skipLocationChange: true
+      }
     });
   }
 

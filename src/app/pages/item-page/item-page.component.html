@@ -2,7 +2,6 @@
 <div #demoYouTubePlayer class="bg demo-youtube-player" style.background-image="url('http://image.tmdb.org/t/p/w780{{itemData.backdrop_path}}')" >
     <div *ngIf="!(spinnerService.visibility | async)">
         <div class="content">
-            <button class="close-button mt-3 ms-3" routerLink='/home'></button>
             <div class="d-flex flex-column flex-lg-row">
                 <div *ngIf="itemData.poster_path != null" class="content-box d-flex justify-content-center align-items-center">
                     <img class="poster" src="http://image.tmdb.org/t/p/w500{{itemData.poster_path}}" alt="poster">

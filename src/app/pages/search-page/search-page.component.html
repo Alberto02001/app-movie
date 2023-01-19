@@ -2,7 +2,7 @@
   <div class="search-container container-fluid">
     <div class="d-flex justify-content-center align-items-center">
       <input (keyup)="onSearch($event)" class="search mt-5" type="text" placeholder="Cerca...">
-      <button class="close-button ms-4 mt-5" routerLink='/home'></button>
+      <button class="close-button ms-4 mt-5" (click)="back()"></button>
     </div>
     <app-spinner *ngIf="spinnerService.visibility | async"></app-spinner>
     <div class="grid" *ngIf="searchName">

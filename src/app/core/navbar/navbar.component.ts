@@ -17,23 +17,17 @@ export class NavbarComponent{
 
   navigateToGenreMovie(id : string){
     this.router.navigate(['/home/genres-movie'], {
-      relativeTo: this.route,
       queryParams: {
         id: id
-      },
-      queryParamsHandling: 'merge',
-      skipLocationChange: true
+      }
     });
   }
 
   navigateToGenreTV(id : string){
     this.router.navigate(['/home/genres-tv'], {
-      relativeTo: this.route,
       queryParams: {
         id: id
-      },
-      queryParamsHandling: 'merge',
-      skipLocationChange: true
+      }
     });
   }
 
