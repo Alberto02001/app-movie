@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { NgbModule, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { ItemPageComponent } from './pages/item-page/item-page.component';
 import { ActorPageComponent } from './pages/actor-page/actor-page.component';
@@ -29,8 +29,7 @@ import { SpinnerComponent } from './core/spinner/spinner.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    YouTubePlayerModule,
-    NgbRatingModule
+    YouTubePlayerModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
