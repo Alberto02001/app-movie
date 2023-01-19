@@ -7,7 +7,7 @@
             <div class="d-flex">
                 <div class="d-flex flex-column justify-content-center" *ngFor="let film of topMovie">
                     <div class="scroll-item" (click)="navigateTo(film.id, film.first_air_date)">
-                        <img class="w-100" src="http://image.tmdb.org/t/p/w500{{film.poster_path}}"/>
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w342{{film.poster_path}}"/>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
             <div class="d-flex">
                 <div class="d-flex flex-column justify-content-center" *ngFor="let tv of topTV">
                     <div class="scroll-item" (click)="navigateTo(tv.id, tv.first_air_date)">
-                        <img class="w-100" src="http://image.tmdb.org/t/p/w500{{tv.poster_path}}"/>
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w342{{tv.poster_path}}"/>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
             <div class="d-flex">
                 <div class="d-flex flex-column justify-content-center" *ngFor="let film of popularMovie">
                     <div class="scroll-item" (click)="navigateTo(film.id, film.first_air_date)">
-                        <img class="w-100" src="http://image.tmdb.org/t/p/w500{{film.poster_path}}"/>
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w342{{film.poster_path}}"/>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
             <div class="d-flex">
                 <div class="d-flex flex-column justify-content-center" *ngFor="let tv of popularTV">
                     <div class="scroll-item" (click)="navigateTo(tv.id, tv.first_air_date)">
-                        <img class="w-100" src="http://image.tmdb.org/t/p/w500{{tv.poster_path}}"/>
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w342{{tv.poster_path}}"/>
                     </div>
                 </div>
             </div>

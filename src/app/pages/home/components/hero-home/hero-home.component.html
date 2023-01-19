@@ -5,7 +5,7 @@
             <ngb-carousel>
                 <ng-template *ngFor="let film of nowMovie" ngbSlide>
                     <div class="picsum-img-wrapper">
-                        <img class="w-100" src="http://image.tmdb.org/t/p/w1280{{film.backdrop_path}}"/>
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w780{{film.backdrop_path}}"/>
                     </div>
                     <div class="carousel-caption">
                         <button (click)="navigateTo(film.id, film.first_air_date)">{{film.title}}</button>
@@ -20,7 +20,7 @@
             <ngb-carousel>
                 <ng-template *ngFor="let tv of trendingTv" ngbSlide>
                     <div class="picsum-img-wrapper">
-                        <img class="w-100" src="http://image.tmdb.org/t/p/w1280{{tv.backdrop_path}}"/>
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w780{{tv.backdrop_path}}"/>
                     </div>
                     <div class="carousel-caption">
                         <button (click)="navigateTo(tv.id, tv.first_air_date)">{{tv.name}}</button>
