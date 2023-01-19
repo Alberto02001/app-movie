@@ -3,7 +3,7 @@
     <div *ngIf="!(spinnerService.visibility | async)">
         <div class="content">
             <div class="d-flex flex-column flex-lg-row">
-                <div *ngIf="itemData.poster_path != null" class="content-box d-flex justify-content-center align-items-center">
+                <div *ngIf="itemData.poster_path != null" class="content-box d-flex flex-column justify-content-center align-items-center">
                     <img class="poster" src="http://image.tmdb.org/t/p/w500{{itemData.poster_path}}" alt="poster">
                 </div>
                 <div class="content-box d-flex flex-column justify-content-center align-items-center align-items-lg-start">
@@ -18,6 +18,8 @@
                             <div *ngIf="itemData.runtime !== undefined" class="d-flex">{{itemData.runtime}} minutes</div>
                             <div *ngIf="itemData.number_of_episodes !== undefined" class="d-flex">{{itemData.number_of_seasons}} {{itemData.number_of_seasons === 1 ? "season" : "seasons"}}, {{itemData.number_of_episodes}} episodes</div>
                         </div>
+                        <ngb-rating class="mt-4" [readonly]="true" [(rate)]="itemData.vote_average"></ngb-rating>
+                        <p class="vote">vote: {{itemData.vote_average}}</p>
                     </div>
                 </div>
             </div>

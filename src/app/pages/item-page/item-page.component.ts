@@ -7,9 +7,11 @@ import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 @Component({
   selector: 'app-item-page',
   templateUrl: './item-page.component.html',
-  styleUrls: ['./item-page.component.scss']
+  styleUrls: ['./item-page.component.scss', ]
 })
 export class ItemPageComponent implements OnInit, AfterViewInit, OnDestroy{
+
+  currentRate = 5
 
   data : any = []
 
