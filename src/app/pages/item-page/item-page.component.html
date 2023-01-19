@@ -18,8 +18,8 @@
                             <div *ngIf="itemData.runtime !== undefined" class="d-flex">{{itemData.runtime}} minutes</div>
                             <div *ngIf="itemData.number_of_episodes !== undefined" class="d-flex">{{itemData.number_of_seasons}} {{itemData.number_of_seasons === 1 ? "season" : "seasons"}}, {{itemData.number_of_episodes}} episodes</div>
                         </div>
-                        <ngb-rating class="mt-4" [readonly]="true" [(rate)]="itemData.vote_average"></ngb-rating>
-                        <p class="vote">vote: {{itemData.vote_average}}</p>
+                        <ngb-rating *ngIf="itemData.vote_average > 0" class="mt-4" [readonly]="true" [(rate)]="itemData.vote_average"></ngb-rating>
+                        <p *ngIf="itemData.vote_average > 0" class="vote">vote: {{itemData.vote_average}}</p>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                 <div class="d-flex align-items-center scroll-container" id="scroll">
                     <div class="d-flex">
                         <div class="d-flex flex-column justify-content-center" *ngFor="let film of similar">
-                            <div class="scroll-item" (click)="goToSimilar(film.id)">
+                            <div *ngIf="film.poster_path != null" class="scroll-item" (click)="goToSimilar(film.id)">
                             <img class="w-100" src="http://image.tmdb.org/t/p/w342{{film.poster_path}}"/>
                             </div>
                         </div>
