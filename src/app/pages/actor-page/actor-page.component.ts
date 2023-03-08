@@ -21,7 +21,7 @@ export class ActorPageComponent implements OnInit{
 
   tv : any = []
 
-  scrollvalue : number = 900
+  loading: boolean = true
 
   constructor(
     private route: ActivatedRoute,
@@ -53,20 +53,28 @@ export class ActorPageComponent implements OnInit{
     (error) => { console.log(error) });
   }
 
+  onLoad() {
+    this.loading = false;
+  }
+
   scrollLeft() : void {
-    document.getElementById("scroll")!.scrollLeft += -this.scrollvalue;
+    let width = document.querySelector('.scroll-container') as HTMLElement
+    document.getElementById("scroll")!.scrollLeft += -width.offsetWidth;
   };
 
   scrollRight() : void {
-    document.getElementById("scroll")!.scrollLeft += this.scrollvalue;
+    let width = document.querySelector('.scroll-container') as HTMLElement
+    document.getElementById("scroll")!.scrollLeft += width.offsetWidth;
   };
 
   scrollLeft1() : void {
-    document.getElementById("scroll1")!.scrollLeft += -this.scrollvalue;
+    let width = document.querySelector('.scroll-container') as HTMLElement
+    document.getElementById("scroll1")!.scrollLeft += -width.offsetWidth;
   };
 
   scrollRight1() : void {
-    document.getElementById("scroll1")!.scrollLeft += this.scrollvalue;
+    let width = document.querySelector('.scroll-container') as HTMLElement
+    document.getElementById("scroll1")!.scrollLeft += width.offsetWidth;
   };
 
   navigateTo(id : string , tv : any){

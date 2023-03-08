@@ -27,11 +27,11 @@ export class ItemPageComponent implements OnInit, AfterViewInit, OnDestroy{
 
   similar : any = []
 
+  loading: boolean = true
+
   @ViewChild('demoYouTubePlayer') demoYouTubePlayer: ElementRef<HTMLDivElement>;
   videoWidth: number | undefined;
   videoHeight: number | undefined;
-
-  scrollvalue : number = 900
 
   constructor(
     private route: ActivatedRoute,
@@ -53,6 +53,15 @@ export class ItemPageComponent implements OnInit, AfterViewInit, OnDestroy{
     });
     
     this.chooseMedia(this.mediaType)
+  }
+
+  ngAfterViewInit() {
+    this.onResize();
+    window.addEventListener('resize', this.onResize);
+  }
+
+  onLoad() {
+    this.loading = false;
   }
 
   chooseMedia(type : string){
@@ -115,19 +124,23 @@ export class ItemPageComponent implements OnInit, AfterViewInit, OnDestroy{
   } 
 
   scrollLeftCast() : void {
-    document.getElementById("scrollCast")!.scrollLeft += -this.scrollvalue;
+    let width = document.querySelector('.scroll-container') as HTMLElement
+    document.getElementById("scrollCast")!.scrollLeft += -width.offsetWidth;
   };
 
   scrollRightCast() : void {
-    document.getElementById("scrollCast")!.scrollLeft += this.scrollvalue;
+    let width = document.querySelector('.scroll-container') as HTMLElement
+    document.getElementById("scrollCast")!.scrollLeft += width.offsetWidth;
   };
 
   scrollLeft() : void {
-    document.getElementById("scroll")!.scrollLeft += -this.scrollvalue;
+    let width = document.querySelector('.scroll-container') as HTMLElement
+    document.getElementById("scroll")!.scrollLeft += -width.offsetWidth;
   };
 
   scrollRight() : void {
-    document.getElementById("scroll")!.scrollLeft += this.scrollvalue;
+    let width = document.querySelector('.scroll-container') as HTMLElement
+    document.getElementById("scroll")!.scrollLeft += width.offsetWidth;
   };
 
   goToActor(id : string){
@@ -137,12 +150,6 @@ export class ItemPageComponent implements OnInit, AfterViewInit, OnDestroy{
       }
     });
   }
-
-  ngAfterViewInit(): void {
-    this.onResize();
-    window.addEventListener('resize', this.onResize);
-  }
-
 
   onResize = (): void => {
     this.videoWidth = Math.min(this.demoYouTubePlayer.nativeElement.clientWidth - 150, 1000);

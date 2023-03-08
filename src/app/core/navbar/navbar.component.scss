@@ -22,16 +22,10 @@
     justify-content: center;
     align-items: center;
     img{
-        width: 95%;
-        transition: all 0.5s;  
-    } 
-}
-.navbar-brand:hover{
-    img{
         width: 100%;
-        transition: all 0.5s;  
     } 
 }
+
 .dropdown-item{
     cursor: pointer;
     color: $dark-blue;
