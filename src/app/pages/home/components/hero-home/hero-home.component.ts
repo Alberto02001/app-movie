@@ -14,6 +14,8 @@ export class HeroHomeComponent{
   @Input() trendingTv : any = []
 
   loading: boolean = true
+  
+  loading2: boolean = true
 
   constructor(
       config: NgbCarouselConfig,
@@ -24,6 +26,10 @@ export class HeroHomeComponent{
 
   onLoad() {
     this.loading = false;
+  }
+
+  onLoad2() {
+    this.loading2 = false;
   }
 
   navigateTo(id : string , tv : any){

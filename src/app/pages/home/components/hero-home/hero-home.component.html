@@ -1,16 +1,19 @@
 <div class="d-flex flex-column flex-lg-row hero-bg justify-content-center align-items-center">
-    <div class="d-flex myCarousel justify-content-center align-items-center">
+
+    <app-spinner *ngIf="loading && loading2"></app-spinner>
+
+    <div [hidden]="loading && loading2" class="d-flex myCarousel justify-content-center align-items-center">
         <div class="d-flex flex-column content">
             <p [hidden]="loading">Now Playing</p>
             <ngb-carousel>
                 <ng-template *ngFor="let film of nowMovie" ngbSlide>
                     <div class="picsum-img-wrapper">
-                        <img [hidden]="loading" (load)="onLoad()" class="w-100" src="http://image.tmdb.org/t/p/w780{{film.backdrop_path}}"/>
-                        <div *ngIf="loading" class="d-flex w-100 justify-content-center">
+                        <img (load)="onLoad()" class="w-100" src="http://image.tmdb.org/t/p/w780{{film.backdrop_path}}"/>
+                        <!-- <div *ngIf="loading" class="d-flex w-100 justify-content-center">
                             <div class="spinner-border text-info" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="carousel-caption">
                         <button (click)="navigateTo(film.id, film.first_air_date)">{{film.title}}</button>
@@ -25,12 +28,12 @@
             <ngb-carousel>
                 <ng-template *ngFor="let tv of trendingTv" ngbSlide>
                     <div class="picsum-img-wrapper">
-                        <img [hidden]="loading" (load)="onLoad()" class="w-100" src="http://image.tmdb.org/t/p/w780{{tv.backdrop_path}}"/>
-                        <div *ngIf="loading" class="d-flex w-100 justify-content-center">
+                        <img (load)="onLoad2()" class="w-100" src="http://image.tmdb.org/t/p/w780{{tv.backdrop_path}}"/>
+                        <!-- <div *ngIf="loading" class="d-flex w-100 justify-content-center">
                             <div class="spinner-border text-info" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="carousel-caption">
                         <button (click)="navigateTo(tv.id, tv.first_air_date)">{{tv.name}}</button>

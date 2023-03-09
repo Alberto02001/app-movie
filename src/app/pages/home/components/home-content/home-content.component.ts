@@ -18,18 +18,12 @@ export class HomeContentComponent{
 
   scrollContainer : HTMLElement;
 
-  loading: boolean = true
-
   constructor(
     private getId: GetIDService
     ) {}
 
   ngAfterViewInit() {
     this.scrollContainer = document.querySelector('.scroll-container') as HTMLElement
-  }
-
-  onLoad() {
-    this.loading = false;
   }
 
   scrollLeft() : void {
