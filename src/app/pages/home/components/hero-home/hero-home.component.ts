@@ -13,12 +13,24 @@ export class HeroHomeComponent{
 
   @Input() trendingTv : any = []
 
+  loading: boolean = true
+  
+  loading2: boolean = true
+
   constructor(
       config: NgbCarouselConfig,
       private getId: GetIDService
     ){
     config.showNavigationIndicators = false;
     }
+
+  onLoad() {
+    this.loading = false;
+  }
+
+  onLoad2() {
+    this.loading2 = false;
+  }
 
   navigateTo(id : string , tv : any){
     this.getId.navigateToItem(id, tv)

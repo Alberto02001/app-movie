@@ -1,14 +1,14 @@
-<app-spinner *ngIf="nowMovie.length < 19 && trendingTv.length < 19"></app-spinner>
+<app-spinner *ngIf="loading && loading2"></app-spinner>
 
-<div *ngIf="nowMovie.length > 19 && trendingTv.length > 19" class="d-flex flex-column flex-lg-row hero-bg justify-content-center align-items-center">
+<div [hidden]="loading && loading2" class="d-flex flex-column flex-lg-row hero-bg justify-content-center align-items-center">
 
     <div class="d-flex myCarousel justify-content-center align-items-center">
         <div class="d-flex flex-column content">
             <p>Now Playing</p>
             <ngb-carousel>
-                <ng-template *ngFor="let film of nowMovie" ngbSlide>
+                <ng-template *ngFor="let film of nowMovie; let i = index" ngbSlide>
                     <div class="picsum-img-wrapper">
-                        <img class="w-100" src="http://image.tmdb.org/t/p/w780{{film.backdrop_path}}"/>
+                        <img (load)="i === nowMovie.length - 1 ? onLoad(): ''" class="w-100" src="http://image.tmdb.org/t/p/w780{{film.backdrop_path}}"/>
                     </div>
                     <div class="carousel-caption">
                         <button (click)="navigateTo(film.id, film.first_air_date)">{{film.title}}</button>
@@ -21,9 +21,9 @@
         <div class="d-flex flex-column content">
             <p class="align-self-end">Trending TV</p>
             <ngb-carousel>
-                <ng-template *ngFor="let tv of trendingTv" ngbSlide>
+                <ng-template *ngFor="let tv of trendingTv; let i = index" ngbSlide>
                     <div class="picsum-img-wrapper">
-                        <img class="w-100" src="http://image.tmdb.org/t/p/w780{{tv.backdrop_path}}"/>
+                        <img (load)="i === trendingTv.length - 1 ? onLoad2(): ''" class="w-100" src="http://image.tmdb.org/t/p/w780{{tv.backdrop_path}}"/>
                     </div>
                     <div class="carousel-caption">
                         <button (click)="navigateTo(tv.id, tv.first_air_date)">{{tv.name}}</button>
