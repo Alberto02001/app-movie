@@ -31,14 +31,14 @@
     }
 
     .scroll-item{
-        width: 180px;
+        width: 200px;
         padding: 5px;
         transition: all 0.5s;
         cursor: pointer;
     }
 
     .scroll-item:hover{
-        width: 200px;
+        width: 210px;
         img{
            box-shadow: 0px 0px 5px 0px $blue-4; 
         }

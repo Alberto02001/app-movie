@@ -1,14 +1,14 @@
-<div class="d-flex flex-column flex-lg-row hero-bg justify-content-center align-items-center">
+<app-spinner *ngIf="nowMovie.length < 19 && trendingTv.length < 19"></app-spinner>
 
-    <app-spinner *ngIf="loading && loading2"></app-spinner>
+<div *ngIf="nowMovie.length > 19 && trendingTv.length > 19" class="d-flex flex-column flex-lg-row hero-bg justify-content-center align-items-center">
 
-    <div [hidden]="loading && loading2" class="d-flex myCarousel justify-content-center align-items-center">
+    <div class="d-flex myCarousel justify-content-center align-items-center">
         <div class="d-flex flex-column content">
-            <p [hidden]="loading">Now Playing</p>
+            <p>Now Playing</p>
             <ngb-carousel>
                 <ng-template *ngFor="let film of nowMovie" ngbSlide>
                     <div class="picsum-img-wrapper">
-                        <img (load)="onLoad()" class="w-100" src="http://image.tmdb.org/t/p/w780{{film.backdrop_path}}"/>
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w780{{film.backdrop_path}}"/>
                     </div>
                     <div class="carousel-caption">
                         <button (click)="navigateTo(film.id, film.first_air_date)">{{film.title}}</button>
@@ -17,13 +17,13 @@
             </ngb-carousel>
         </div>
     </div> 
-    <div [hidden]="loading && loading2" class="d-flex myCarousel justify-content-center align-items-center mt-5 mt-lg-0">
+    <div class="d-flex myCarousel justify-content-center align-items-center mt-5 mt-lg-0">
         <div class="d-flex flex-column content">
-            <p [hidden]="loading" class="align-self-end">Trending TV</p>
+            <p class="align-self-end">Trending TV</p>
             <ngb-carousel>
                 <ng-template *ngFor="let tv of trendingTv" ngbSlide>
                     <div class="picsum-img-wrapper">
-                        <img (load)="onLoad2()" class="w-100" src="http://image.tmdb.org/t/p/w780{{tv.backdrop_path}}"/>
+                        <img class="w-100" src="http://image.tmdb.org/t/p/w780{{tv.backdrop_path}}"/>
                     </div>
                     <div class="carousel-caption">
                         <button (click)="navigateTo(tv.id, tv.first_air_date)">{{tv.name}}</button>
@@ -32,4 +32,5 @@
             </ngb-carousel>
         </div>
     </div> 
+
 </div>
