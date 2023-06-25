@@ -24,6 +24,16 @@
     .content{
         width: 85%;
     }
+    .picsum-img-wrapper{
+        min-height: 250px;
+        @include media-breakpoint-down(sm){
+            min-height: 175px;
+        }  
+        @include media-breakpoint-up(xl){
+            min-height: 300px;
+        }  
+        background-color: $blue-2;
+    }
     p{
         font-size: 30px;
         color: $blue-4;

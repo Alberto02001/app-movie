@@ -25,7 +25,7 @@ export class SearchPageComponent {
   onSearch(event: any) {
     this.searchName = event.target.value
     this.http.getSearch(this.searchName).subscribe((data: any) => {
-      this.searchResults = data.results
+      this.searchResults = data.results.filter((item : any) => item.poster_path != null)
     },
     (error) => { console.log(error) });
   }

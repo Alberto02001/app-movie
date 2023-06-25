@@ -68,14 +68,17 @@
                 </ngb-carousel>
             </div>
 
-            <div class="d-flex justify-content-center align-items-center sub-title pt-5"><p>Similar shows</p></div>  
-            <div class="d-flex justify-content-center align-items-center slider pb-5">    
+            <div *ngIf="similar.length > 0" class="d-flex justify-content-center align-items-center sub-title pt-5"><p>Similar shows</p></div>  
+            <div *ngIf="similar.length > 0" class="d-flex justify-content-center align-items-center slider pb-5">    
                 <button class="left-button d-none d-sm-block" (click)="scrollLeft()"></button>
                 <div class="d-flex align-items-center scroll-container" id="scroll">
                     <div class="d-flex">
                         <div class="d-flex flex-column justify-content-center" *ngFor="let film of similar">
                             <div *ngIf="film.poster_path != null" class="scroll-item" (click)="goToSimilar(film.id)">
-                            <img class="w-100" src="http://image.tmdb.org/t/p/w342{{film.poster_path}}"/>
+                                <img class="w-100" src="http://image.tmdb.org/t/p/w342{{film.poster_path}}"/>
+                                <div class="spinner-border text-info" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
                             </div>
                         </div>
                     </div>

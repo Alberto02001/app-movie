@@ -22,6 +22,9 @@
                 <div class="d-flex flex-column justify-content-center " *ngFor="let film of movie">
                     <div class="scroll-item" (click)="navigateTo(film.id, film.first_air_date)" *ngIf="film.poster_path != null">
                         <img class="w-100" src="http://image.tmdb.org/t/p/w342{{film.poster_path}}"/>
+                        <div class="spinner-border text-info" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -36,6 +39,9 @@
                 <div class="d-flex flex-column justify-content-center" *ngFor="let tv of tv">
                     <div class="scroll-item" (click)="navigateTo(tv.id, tv.first_air_date)" *ngIf="tv.poster_path != null">
                         <img class="w-100" src="http://image.tmdb.org/t/p/w342{{tv.poster_path}}"/>
+                        <div class="spinner-border text-info" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
                     </div>
                 </div>
             </div>
