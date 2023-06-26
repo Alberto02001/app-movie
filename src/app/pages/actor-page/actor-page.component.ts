@@ -59,22 +59,22 @@ export class ActorPageComponent implements OnInit{
 
   scrollLeft() : void {
     let width = document.querySelector('.scroll-container') as HTMLElement
-    document.getElementById("scroll")!.scrollLeft += -width.offsetWidth + 80;
+    document.getElementById("scroll")!.scrollLeft += -width.offsetWidth + 110;
   };
 
   scrollRight() : void {
     let width = document.querySelector('.scroll-container') as HTMLElement
-    document.getElementById("scroll")!.scrollLeft += width.offsetWidth - 80;
+    document.getElementById("scroll")!.scrollLeft += width.offsetWidth - 110;
   };
 
   scrollLeft1() : void {
     let width = document.querySelector('.scroll-container') as HTMLElement
-    document.getElementById("scroll1")!.scrollLeft += -width.offsetWidth + 80;
+    document.getElementById("scroll1")!.scrollLeft += -width.offsetWidth + 110;
   };
 
   scrollRight1() : void {
     let width = document.querySelector('.scroll-container') as HTMLElement
-    document.getElementById("scroll1")!.scrollLeft += width.offsetWidth - 80;
+    document.getElementById("scroll1")!.scrollLeft += width.offsetWidth - 110;
   };
 
   navigateTo(id : string , tv : any){

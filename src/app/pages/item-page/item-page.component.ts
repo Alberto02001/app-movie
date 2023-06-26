@@ -125,22 +125,22 @@ export class ItemPageComponent implements OnInit, AfterViewInit, OnDestroy{
 
   scrollLeftCast() : void {
     let width = document.querySelector('.scroll-container') as HTMLElement
-    document.getElementById("scrollCast")!.scrollLeft += -width.offsetWidth + 80;
+    document.getElementById("scrollCast")!.scrollLeft += -width.offsetWidth + 110;
   };
 
   scrollRightCast() : void {
     let width = document.querySelector('.scroll-container') as HTMLElement
-    document.getElementById("scrollCast")!.scrollLeft += width.offsetWidth - 80;
+    document.getElementById("scrollCast")!.scrollLeft += width.offsetWidth - 110;
   };
 
   scrollLeft() : void {
     let width = document.querySelector('.scroll-container') as HTMLElement
-    document.getElementById("scroll")!.scrollLeft += -width.offsetWidth + 80;
+    document.getElementById("scroll")!.scrollLeft += -width.offsetWidth + 110;
   };
 
   scrollRight() : void {
     let width = document.querySelector('.scroll-container') as HTMLElement
-    document.getElementById("scroll")!.scrollLeft += width.offsetWidth - 80;
+    document.getElementById("scroll")!.scrollLeft += width.offsetWidth - 110;
   };
 
   goToActor(id : string){

@@ -27,36 +27,36 @@ export class HomeContentComponent{
   }
 
   scrollLeft() : void {
-    document.getElementById("scroll")!.scrollLeft += -this.scrollContainer.offsetWidth + 80;
+    document.getElementById("scroll")!.scrollLeft += -this.scrollContainer.offsetWidth + 110;
   };
 
   scrollRight() : void {
-    document.getElementById("scroll")!.scrollLeft += this.scrollContainer.offsetWidth - 80;
+    document.getElementById("scroll")!.scrollLeft += this.scrollContainer.offsetWidth - 110;
   };
 
   
   scrollLeft1() : void {
-    document.getElementById("scroll1")!.scrollLeft += -this.scrollContainer.offsetWidth + 80;
+    document.getElementById("scroll1")!.scrollLeft += -this.scrollContainer.offsetWidth + 110;
   };
 
   scrollRight1() : void {
-    document.getElementById("scroll1")!.scrollLeft += this.scrollContainer.offsetWidth - 80;
+    document.getElementById("scroll1")!.scrollLeft += this.scrollContainer.offsetWidth - 110;
   };
 
   scrollLeft2() : void {
-    document.getElementById("scroll2")!.scrollLeft += -this.scrollContainer.offsetWidth + 80;
+    document.getElementById("scroll2")!.scrollLeft += -this.scrollContainer.offsetWidth + 110;
   };
 
   scrollRight2() : void {
-    document.getElementById("scroll2")!.scrollLeft += this.scrollContainer.offsetWidth - 80;
+    document.getElementById("scroll2")!.scrollLeft += this.scrollContainer.offsetWidth - 110;
   };
 
   scrollLeft3() : void {
-    document.getElementById("scroll3")!.scrollLeft += -this.scrollContainer.offsetWidth + 80;
+    document.getElementById("scroll3")!.scrollLeft += -this.scrollContainer.offsetWidth + 110;
   };
 
   scrollRight3() : void {
-    document.getElementById("scroll3")!.scrollLeft += this.scrollContainer.offsetWidth - 80;
+    document.getElementById("scroll3")!.scrollLeft += this.scrollContainer.offsetWidth - 110;
   };
 
   navigateTo(id : string , tv : any){
