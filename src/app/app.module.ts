@@ -13,12 +13,12 @@ import { ItemPageComponent } from './pages/item-page/item-page.component';
 import { ActorPageComponent } from './pages/actor-page/actor-page.component';
 import { CustomHttpInterceptor } from './services/spinner/http-interceptor';
 import { SpinnerComponent } from './core/spinner/spinner.component';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent,
     SearchPageComponent,
     ItemPageComponent,
     ActorPageComponent,
@@ -29,7 +29,8 @@ import { SpinnerComponent } from './core/spinner/spinner.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    HomeModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

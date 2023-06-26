@@ -13,6 +13,7 @@ import { TopRatedTvComponent } from './nav-pages/tv/top-rated-tv/top-rated-tv.co
 import { PopularTvComponent } from './nav-pages/tv/popular-tv/popular-tv.component';
 import { GenreTvComponent } from './nav-pages/tv/genre-tv/genre-tv.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { FooterComponent } from 'src/app/core/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,16 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     TopRatedTvComponent,
     PopularTvComponent,
     GenreTvComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     NgbModule
+  ],
+  exports: [
+    FooterComponent
   ]
 })
 export class HomeModule { }
