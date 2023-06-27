@@ -1,4 +1,4 @@
-<!-- <app-spinner *ngIf="spinnerService.visibility | async"></app-spinner> -->
-<app-hero-home [nowMovie]="nowMovie" [trendingTv]="trendingTv"></app-hero-home>
-<app-home-content [topMovie]="topMovie" [popularMovie]="popularMovie" [topTV]="topTV" [popularTV]="popularTV"></app-home-content>
-<app-footer></app-footer>
+<app-spinner *ngIf="spinnerService.visibility | async"></app-spinner>
+<app-hero-home *ngIf="!(spinnerService.visibility | async)" [nowMovie]="nowMovie" [trendingTv]="trendingTv"></app-hero-home>
+<app-home-content *ngIf="!(spinnerService.visibility | async)" [topMovie]="topMovie" [popularMovie]="popularMovie" [topTV]="topTV" [popularTV]="popularTV"></app-home-content>
+<app-footer *ngIf="!(spinnerService.visibility | async)"></app-footer>
