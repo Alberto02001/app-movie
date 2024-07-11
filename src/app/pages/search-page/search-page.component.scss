@@ -80,10 +80,12 @@
 }
 
 .item{
+    border-radius: 5px;
     margin: 5px;
     transition: all 0.5s;
     cursor: pointer;
     img{
+        border-radius: 5px;
         max-width: 100%;
     }
 }

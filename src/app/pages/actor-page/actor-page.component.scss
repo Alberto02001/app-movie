@@ -4,11 +4,15 @@
 .bg{
     background-color: $dark-blue;
     .poster-box{
+        border-radius: 10px;
         width: 100%;
         @include media-breakpoint-up(lg){
             width: 50%;
             height: 800px;
         } 
+        img {
+            border-radius: 10px; 
+        }
     }
     .content-box{
         width: 100%;

@@ -13,10 +13,14 @@
         background-image: linear-gradient(to bottom, rgba(22,25,37,0.9), rgba(22,25,37,1));
         .content-box{
             width: 100%;
+            border-radius: 10px;
             @include media-breakpoint-up(lg){
                 width: 50%;
                 height: 800px;
             } 
+            img {
+                border-radius: 10px;
+            }
         }
         .poster{
             width: 250px;
